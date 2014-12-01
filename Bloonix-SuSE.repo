@@ -1,0 +1,10 @@
+[bloonix]
+name=Bloonix repository
+enabled=1
+autorefresh=1
+baseurl=https://download.bloonix.de/repos/suse/13/
+path=/
+type=NONE
+keeppackages=0
+gpgcheck=1
+gpgkey=https://download.bloonix.de/repos/suse/RPM-GPG-KEY-Bloonix

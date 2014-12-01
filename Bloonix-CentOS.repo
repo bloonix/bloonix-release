@@ -1,0 +1,5 @@
+[bloonix]
+name=Bloonix repository
+baseurl=https://download.bloonix.de/repos/centos/$releasever/$basearch
+gpgcheck=1
+gpgkey=file:///etc/pki/rpm-gpg/RPM-GPG-KEY-Bloonix
