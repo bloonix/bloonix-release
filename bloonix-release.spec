@@ -1,10 +1,10 @@
 Summary: Bloonix repository configuration
 Name: bloonix-release
 Version: 0.4
-Release: 1%{dist}
+Release: 2%{dist}
 License: distributable
 Group: System Environment/Base
-Distribution: RHEL/CentOS/SuSE
+Distribution: RHEL/CentOS/Fedora/SuSE
 
 Packager: Jonny Schulz <js@bloonix.de>
 Vendor: Bloonix
@@ -17,13 +17,16 @@ Source0: https://download.bloonix.de/sources/%{name}-%{version}.tar.gz
 %description
 bloonix-release provides files for the bloonix repository configuration.
 
-%define gpgdir %{_sysconfdir}/pki/rpm-gpg
 # RHEL/CentOS
-#%define repodir %{_sysconfdir}/yum.repos.d
-#%define repofile Bloonix-CentOS.repo
+%if 0%{?fedora} || 0%{?centos} || 0%{?rhel} 
+%define gpgdir %{_sysconfdir}/pki/rpm-gpg
+%define repodir %{_sysconfdir}/yum.repos.d
+%define repofile Bloonix-CentOS.repo
+%else
 # SLES/SuSE
 %define repodir %{_sysconfdir}/zypp/repos.d
 %define repofile Bloonix-SuSE.repo
+%endif
 
 %prep
 %setup -q -n %{name}-%{version}
@@ -40,6 +43,11 @@ install -c -m 0644 %{repofile} ${RPM_BUILD_ROOT}%{repodir}/Bloonix.repo
 %clean
 rm -rf $RPM_BUILD_ROOT
 
+%post
+%if 0%{?fedora}
+sed 's@\$releasever@7@' %{repodir}/Bloonix.repo > /tmp/bloonix.repo.$$ && mv /tmp/bloonix.repo.$$ /etc/yum.repos.d/Bloonix.repo
+%endif
+
 %files
 %defattr(-,root,root,-)
 %dir %{repodir}
@@ -48,6 +56,8 @@ rm -rf $RPM_BUILD_ROOT
 %{gpgdir}/*
 
 %changelog
+* Fri Dec 05 2014 Norbert Varzariu <root@loomsen.org> - 0.4-2
+- Make spec distro independent
 * Sat Sep 20 2014 Jonny Schulz <js@bloonix.de> - 0.4-1
 - New path to the repositories.
 * Sat Mar 29 2014 Jonny Schulz <js@bloonix.de> - 0.3-1
