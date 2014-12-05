@@ -1,7 +1,7 @@
 Summary: Bloonix repository configuration
 Name: bloonix-release
-Version: 0.4
-Release: 2%{dist}
+Version: 0.5
+Release: 1%{dist}
 License: distributable
 Group: System Environment/Base
 Distribution: RHEL/CentOS/Fedora/SuSE
@@ -56,8 +56,8 @@ sed 's@\$releasever@7@' %{repodir}/Bloonix.repo > /tmp/bloonix.repo.$$ && mv /tm
 %{gpgdir}/*
 
 %changelog
-* Fri Dec 05 2014 Norbert Varzariu <root@loomsen.org> - 0.4-2
-- Make spec distro independent
+* Fri Dec 05 2014 Jonny Schulz <js@bloonix.de> - 0.5-1
+- Update bloonix-release.spec for fedora.
 * Sat Sep 20 2014 Jonny Schulz <js@bloonix.de> - 0.4-1
 - New path to the repositories.
 * Sat Mar 29 2014 Jonny Schulz <js@bloonix.de> - 0.3-1
