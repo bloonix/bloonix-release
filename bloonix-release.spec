@@ -19,7 +19,6 @@ bloonix-release provides files for the bloonix repository configuration.
 
 # RHEL/CentOS
 %if 0%{?fedora} || 0%{?centos} || 0%{?rhel} 
-%define gpgdir %{_sysconfdir}/pki/rpm-gpg
 %define repodir %{_sysconfdir}/yum.repos.d
 %define repofile Bloonix-CentOS.repo
 %else
@@ -27,6 +26,8 @@ bloonix-release provides files for the bloonix repository configuration.
 %define repodir %{_sysconfdir}/zypp/repos.d
 %define repofile Bloonix-SuSE.repo
 %endif
+
+%define gpgdir %{_sysconfdir}/pki/rpm-gpg
 
 %prep
 %setup -q -n %{name}-%{version}
