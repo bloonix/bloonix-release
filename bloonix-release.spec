@@ -1,7 +1,7 @@
 Summary: Bloonix repository configuration
 Name: bloonix-release
 Version: 0.6
-Release: 1%{dist}
+Release: 1.noarch
 License: distributable
 Group: System Environment/Base
 Distribution: RHEL/CentOS/Fedora/SuSE
