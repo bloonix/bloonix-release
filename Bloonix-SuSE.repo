@@ -2,7 +2,7 @@
 name=Bloonix repository
 enabled=1
 autorefresh=1
-baseurl=https://download.bloonix.de/repos/suse/13/
+baseurl=https://download.bloonix.de/repos/suse/13/$basearch
 path=/
 type=NONE
 keeppackages=0

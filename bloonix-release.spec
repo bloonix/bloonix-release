@@ -1,6 +1,6 @@
 Summary: Bloonix repository configuration
 Name: bloonix-release
-Version: 0.5
+Version: 0.6
 Release: 1%{dist}
 License: distributable
 Group: System Environment/Base
@@ -57,6 +57,8 @@ sed 's@\$releasever@7@' %{repodir}/Bloonix.repo > /tmp/bloonix.repo.$$ && mv /tm
 %{gpgdir}/*
 
 %changelog
+* Wed Feb 10 2016 Jonny Schulz <js@bloonix.de> - 0.6-1
+- Repo path fixed for SuSE.
 * Fri Dec 05 2014 Jonny Schulz <js@bloonix.de> - 0.5-1
 - Update bloonix-release.spec for fedora.
 * Sat Sep 20 2014 Jonny Schulz <js@bloonix.de> - 0.4-1
