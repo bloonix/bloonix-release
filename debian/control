@@ -1,0 +1,13 @@
+Source: bloonix-release
+Section: net
+Priority: extra
+Maintainer: Jonny Schulz <js@bloonix.de>
+Build-Depends: debhelper (>= 8)
+Standards-Version: 3.9.3
+Homepage: http://www.bloonix.de/
+
+Package: bloonix-release
+Architecture: all
+Depends: ${shlibs:Depends}, ${misc:Depends}
+Description: Bloonix release
+ bloonix-release provides files for the bloonix repo.

@@ -1,0 +1,4 @@
+#!/bin/sh
+
+echo "download and install bloonix.gpg"
+wget -q -O- https://download.bloonix.de/repos/debian/bloonix.gpg | apt-key add -
