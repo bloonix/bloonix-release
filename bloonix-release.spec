@@ -1,6 +1,6 @@
 Summary: Bloonix repository configuration
 Name: bloonix-release
-Version: 0.6
+Version: 0.7
 Release: 1
 License: distributable
 Group: System Environment/Base
@@ -57,6 +57,8 @@ sed 's@\$releasever@7@' %{repodir}/Bloonix.repo > /tmp/bloonix.repo.$$ && mv /tm
 %{gpgdir}/*
 
 %changelog
+* Tue Mar 29 2016 Jonny Schulz <js@bloonix.de> - 0.7-1
+- A new Bloonix GPG key.
 * Wed Feb 10 2016 Jonny Schulz <js@bloonix.de> - 0.6-1
 - Repo path fixed for SuSE.
 * Fri Dec 05 2014 Jonny Schulz <js@bloonix.de> - 0.5-1
